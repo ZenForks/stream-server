@@ -1,7 +1,7 @@
 <html lang="en" class="full-height">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-    <title>Hello World - <%= udir %></title>
+    <title>Hello World</title>
 
     <meta
             name="viewport"
@@ -23,22 +23,16 @@
 <main>
     <nav class="navbar navbar-expand-lg navbar-dark black fixed-top scrolling-navbar">
         <div class="container">
-            <a class="navbar-brand" href="/"><strong>HELLO WORLD</strong></a>
+            <a class="navbar-brand" href="/"><strong>Stream Server</strong></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
                     aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                 <ul class="navbar-nav my-2 my-lg-0 mr-auto">
-                    <!-- <li class="nav-item">
-                       <a class="nav-link" data-toggle="modal" data-target="#addItem"href="#"><i class="fas fa-plus text-white"></i> Add Item</a>
-                     </li> -->
                 </ul>
 
                 <ul class="navbar-nav my-2 my-lg-0 ml-auto">
-                    <!-- <li class="nav-item">
-                       <a class="nav-link" href="#" data-toggle="modal" data-target="#about"><i class="fas fa-info-circle"></i> About</a>
-                     </li> -->
                 </ul>
             </div>
         </div>
@@ -48,24 +42,20 @@
         <div class="container">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb black">
-                    <li class="breadcrumb-item"><a href="/">Home</a></li>
-                    <li class="breadcrumb-item active "><%= udir %></li>
+                    <li class="breadcrumb-item active">Home</li>
                 </ol>
             </nav>
             <div class="elegant-color pt-5 px-5">
                 <table id="list" class="table table-hover table-striped btn-table table-responsive-lg text-white mb-0">
                     <thead>
-                    <th style="width:50px;">Type</th>
+                    <th style="width:50px;">No.</th>
                     <th>Name</th>
                     </thead>
                     <tbody>
-                    <%- files.map((f, i) => `
-<tr>
-<td><a href="/watch/${f}" class="text-white">🎬</a></td>
-<td><a href="/watch/${f}" class="text-white">${f}</a></td>
-</tr>
-`).join(" ");
-                    -%>
+                    <tr>
+                        <td><a href="/default" class="text-white">1.</a></td>
+                        <td><a href="/default" class="text-white"><%= udir %></a></td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -92,7 +82,7 @@
         $('#list').DataTable({
             "pagingType": "simple_numbers",
             columnDefs: [{
-                orderable: false,
+                orderable: true,
                 targets: 1
             }]
         });
