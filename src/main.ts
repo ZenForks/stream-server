@@ -4,7 +4,6 @@ import { directory, port } from "./config.json";
 import { resolve, join } from "path";
 
 const app = express();
-console.log(join(__dirname, "assets"))
 app.use(express.static(join(__dirname, "assets")));
 app.set("view engine", "ejs");
 app.set("views", join(__dirname, "views"));
