@@ -39,5 +39,4 @@ app.get("/watch/:name", (req, res) => {
    const name = req.params.name;
    fs.createReadStream(`${resolve(__dirname, directory)}/${name}`)
        .pipe(res);
-   res.status(200).send("<h1> OK </h1>");
 });
